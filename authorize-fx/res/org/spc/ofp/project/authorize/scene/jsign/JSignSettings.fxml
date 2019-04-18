@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright - Secretariat of the Pacific Community                   *
+Droit de copie - Secrétariat Général de la Communauté du Pacifique *
+http://www.spc.int/     
+-->
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.spc.ofp.project.authorize.scene.jsign.JSignSettingsController">
+    <children>
+        <GridPane styleClass="authorize-grid-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+        <Label text="%jsign.program.name.label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="programNameField" prefWidth="200.0" promptText="%jsign.program.name.prompt" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="%jsign.program.url.label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="programUrlField" prefWidth="200.0" promptText="%jsign.program.url.prompt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="100.0" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                <RowConstraints vgrow="NEVER" />
+            </rowConstraints>
+        </GridPane>
+    </children>    
+</AnchorPane>

@@ -1,0 +1,31 @@
+.authorize-grid-pane {
+    -fx-hgap: 3;
+    -fx-vgap: 3;
+}
+.authorize-hbox,
+.authorize-vbox {
+    -fx-spacing: 3
+}
+.autorize-border-pane {    
+}
+.authorize-button-box {
+    -fx-padding: 6;
+    -fx-spacing: 6;
+    -fx-alignment: center-right;
+}
+.authorize-container {
+    -fx-padding: 6;    
+}
+.h1 {
+    -fx-font-size: 1.5em;
+    -fx-font-wiehg: bold;
+}
+.vbox-alert {
+    -fx-spacing: 3px;
+    -fx-alignment: center-right;
+    -fx-fill-width: true;
+}
+.copyright-label {
+    -fx-font-size: 0.8em;
+    -fx-opacity: 0.33;
+}

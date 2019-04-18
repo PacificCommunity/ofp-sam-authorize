@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright - Secretariat of the Pacific Community                   *
+Droit de copie - Secrétariat Général de la Communauté du Pacifique *
+http://www.spc.int/     
+-->
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource strings.properties?>
+<?scenebuilder-stylesheet Authorize.css?>
+
+<BorderPane id="rootPane" fx:id="rootPane" prefHeight="-1.0" prefWidth="600.0" styleClass="autorize-border-pane, authorize-container" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.spc.ofp.project.authorize.scene.main.MainUIController">
+    <center>
+        <BorderPane id="centerPane" fx:id="centerPane" styleClass="autorize-border-pane, authorize-container">
+            <center>
+                <VBox id="centerVBox" fx:id="centerVBox" styleClass="authorize-vbox">
+                    <children>
+                        <Label styleClass="h1" text="%project.label" />
+                        <fx:include fx:id="projectSettings" source="../project/ProjectSettings.fxml" />
+                        <Label styleClass="h1" text="%keystore.label" />
+                        <fx:include fx:id="keyStoreSettings" source="../keystore/KeyStoreSettings.fxml" />
+                    </children>
+                </VBox>
+            </center>
+            <bottom>
+                <VBox id="bottomProgressBox" fx:id="bottomProgressBox" styleClass="authorize-vbox, authorize-button-box">
+                    <children>
+                        <ProgressBar id="progressBar" fx:id="progressBar" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="200.0" progress="0.0" />      
+                        <Button id="signButton" fx:id="signButton" text="%sign.label" onAction="#handleSignButton"/>
+                        <Label id="copyrightLabel" fx:id="copyrightLabel" styleClass="copyright-label" text="%app.copyright"/>                        
+                    </children>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </center>
+    <left>
+        <ListView id="projectList" fx:id="projectList" prefWidth="200.0" />
+    </left>
+</BorderPane>

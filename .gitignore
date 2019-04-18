@@ -21,3 +21,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+authorize-cli/settings.properties
+authorize-cli/settings-jarsigner.properties
+authorize-cli/settings-jsign.properties
+authorize-fx/settings.properties
+authorize-fx/settings.properties~
+authorize-cli/build/
+authorize-cli/dist/
+authorize-cli/out/
+authorize-cli/nbproject/private/
+authorize-core/build/
+authorize-core/dist/
+authorize-core/out/
+authorize-core/nbproject/private/
+authorize-fx/build/
+authorize-fx/dist/
+authorize-fx/out/
+authorize-fx/nbproject/private/
