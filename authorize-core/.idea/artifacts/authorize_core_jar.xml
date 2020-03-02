@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="authorize.core:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/authorize_core_jar</output-path>
+    <root id="archive" name="authorize.core.jar">
+      <element id="module-output" name="authorize.core" />
+    </root>
+  </artifact>
+</component>

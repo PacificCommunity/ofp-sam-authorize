@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="authorize.core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../authorize.core/out/artifacts/authorize_core_jar/authorize.core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../authorize.core/src" />
+    </SOURCES>
+  </library>
+</component>
