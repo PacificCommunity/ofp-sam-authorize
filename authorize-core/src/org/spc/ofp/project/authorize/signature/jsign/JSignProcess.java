@@ -71,6 +71,7 @@ public final class JSignProcess extends SignatureProcessBase {
         final PESigner signer = new PESigner(keyStore, parameters.alias, parameters.keypass)
                 .withProgramName(parameters.programName)
                 .withProgramURL(parameters.programURL)
+//                .withContactEmail(parameters.programEmail)
                 .withTimestamping(parameters.useTimeStamp);
         if (parameters.useTimeStamp) {
             signer.withTimestampingAutority(parameters.timeStampHost);

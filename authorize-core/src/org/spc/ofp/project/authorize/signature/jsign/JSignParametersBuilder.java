@@ -44,6 +44,7 @@ public final class JSignParametersBuilder {
         result.keypass = delegated.keypass;
         result.programName = delegated.programName;
         result.programURL = delegated.programURL;
+        result.programEmail = delegated.programEmail;
         result.useProxy = delegated.useProxy;
         result.proxyHost = delegated.proxyHost;
         result.proxyPort = delegated.proxyPort;
@@ -95,6 +96,11 @@ public final class JSignParametersBuilder {
         return this;
     }
 
+    public JSignParametersBuilder programEmail(final String value) {
+        delegated.programEmail = value;
+        return this;
+    }
+    
     public JSignParametersBuilder useProxy(final boolean value) {
         delegated.useProxy = value;
         return this;

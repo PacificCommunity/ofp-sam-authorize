@@ -15,10 +15,12 @@ http://www.spc.int/
     <children>
         <GridPane styleClass="authorize-grid-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-        <Label text="%jsign.program.name.label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="programNameField" prefWidth="200.0" promptText="%jsign.program.name.prompt" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Label text="%jsign.program.url.label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField fx:id="programUrlField" prefWidth="200.0" promptText="%jsign.program.url.prompt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="%jsign.program.name.label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="programNameField" prefWidth="200.0" promptText="%jsign.program.name.prompt" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="%jsign.program.url.label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="programUrlField" prefWidth="200.0" promptText="%jsign.program.url.prompt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="%jsign.program.email.label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="programEmailField" prefWidth="200.0" promptText="%jsign.program.email.prompt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="NEVER" minWidth="100.0" prefWidth="-1.0" />
@@ -26,7 +28,6 @@ http://www.spc.int/
                 <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
                 <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
                 <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
                 <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />

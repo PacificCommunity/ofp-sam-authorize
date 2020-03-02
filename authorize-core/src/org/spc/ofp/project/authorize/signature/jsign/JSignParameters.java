@@ -20,6 +20,7 @@ public class JSignParameters {
     String keypass = "";
     String programName = "";
     String programURL = "";
+    String programEmail = "";
     boolean useProxy = false;
     String proxyHost = "";
     String proxyPort = "";

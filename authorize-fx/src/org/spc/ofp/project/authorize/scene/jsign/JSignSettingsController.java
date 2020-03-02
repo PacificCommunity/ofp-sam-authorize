@@ -23,6 +23,8 @@ public final class JSignSettingsController implements Initializable {
     private TextField programNameField;
     @FXML
     private TextField programUrlField;
+    @FXML
+    private TextField programEmailField;
 
     /**
      * Creates a new instance.
@@ -45,6 +47,8 @@ public final class JSignSettingsController implements Initializable {
         programNameField.setText(programName);
         final var programUrl = (invalid) ? null : properties.getProperty(project + ".program.url"); // NOI18N.
         programUrlField.setText(programUrl);
+        final var programEmail = (invalid) ? null : properties.getProperty(project + ".program.email"); // NOI18N.
+        programEmailField.setText(programEmail);
     }
 
     /**
@@ -56,6 +60,7 @@ public final class JSignSettingsController implements Initializable {
             return;
         }
         parametersBuilder.programName(programNameField.getText())
-                .programURL(programUrlField.getText());
+                .programURL(programUrlField.getText())
+                .programEmail(programEmailField.getText());
     }
 }
