@@ -7,11 +7,10 @@ package org.spc.ofp.project.authorize.signature.jsign;
 
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.util.Objects;
-import net.jsign.PESigner;
+import net.jsign.AuthenticodeSigner;
 import net.jsign.pe.PEFile;
 import org.spc.ofp.project.authorize.io.IOUtils;
 import org.spc.ofp.project.authorize.signature.SignatureProcessBase;
@@ -43,7 +42,7 @@ public final class JSignProcess extends SignatureProcessBase {
     @Override
     public void sign() throws Exception {
         // Nothing to do!
-        if (parameters.filename == null || parameters.filename.isEmpty() || parameters.filename.isBlank()) {
+        if (Objects.isNull(parameters.filename) || parameters.filename.isEmpty() || parameters.filename.isBlank()) {
             return;
         }
         updateMessage("Initializing."); // NOI18N.
@@ -51,15 +50,15 @@ public final class JSignProcess extends SignatureProcessBase {
         int currentProgress = 0;
         // Create keystore.
         updateMessage("Create key store.");
-        final KeyStore keyStore = KeyStore.getInstance("JKS"); // NOI18N.
+        final var keyStore = KeyStore.getInstance("JKS"); // NOI18N.
         updateProgress(++currentProgress, totalProgress);
         if (isCancelled()) {
             return;
         }
         // Open & load keystore file.
         updateMessage("Loading key store."); // NOI18N.
-        final Path keystoreFile = Paths.get(parameters.keystoreFilename);
-        try (final InputStream input = Files.newInputStream(keystoreFile)) {
+        final var keystoreFile = Paths.get(parameters.keystoreFilename);
+        try (final var input = Files.newInputStream(keystoreFile)) {
             keyStore.load(input, parameters.password.toCharArray());
         }
         updateProgress(++currentProgress, totalProgress);
@@ -68,13 +67,13 @@ public final class JSignProcess extends SignatureProcessBase {
         }
         // Create signer.
         updateMessage("Creating signer."); // NOI18N.
-        final PESigner signer = new PESigner(keyStore, parameters.alias, parameters.keypass)
+        var signer = new AuthenticodeSigner(keyStore, parameters.alias, parameters.keypass)
                 .withProgramName(parameters.programName)
                 .withProgramURL(parameters.programURL)
 //                .withContactEmail(parameters.programEmail)
                 .withTimestamping(parameters.useTimeStamp);
         if (parameters.useTimeStamp) {
-            signer.withTimestampingAutority(parameters.timeStampHost);
+            signer = signer.withTimestampingAuthority(parameters.timeStampHost);
         }
         updateProgress(++currentProgress, totalProgress);
         if (isCancelled()) {
@@ -82,11 +81,11 @@ public final class JSignProcess extends SignatureProcessBase {
         }
         // Create file to be signed.
         updateMessage("Preparing target file."); // NOI18N.
-        final Path targetFile = Paths.get(parameters.filename);
+        final var targetFile = Paths.get(parameters.filename);
         if (!Files.isWritable(targetFile)) {
             IOUtils.INSTANCE.setWritable(targetFile);
         }
-        final PEFile pefTargetFile = new PEFile(targetFile.toFile());
+        final var pefTargetFile = new PEFile(targetFile.toFile());
         updateProgress(++currentProgress, totalProgress);
         if (isCancelled()) {
             return;
@@ -95,6 +94,7 @@ public final class JSignProcess extends SignatureProcessBase {
         updateMessage("Signing file."); // NOI18N.
         signer.sign(pefTargetFile);
         updateProgress(++currentProgress, totalProgress);
+        // @todo Check signature?
         if (isCancelled()) {
             return;
         }
